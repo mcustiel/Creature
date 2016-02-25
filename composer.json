@@ -32,7 +32,7 @@
 		"php" : ">=5.5"
 	},
 	"require-dev" : {
-		"phpunit/phpunit" : "~5.0",
+		"phpunit/phpunit" : "~4.8.23",
 		"phing/phing" : "~2.12.0",
 		"fabpot/php-cs-fixer" : "*",
 		"phpmd/phpmd" : "~2.3.2",
