@@ -3,7 +3,7 @@ namespace Mcustiel\Creature;
 
 class CallbackCreator implements CreatorInterface
 {
-    private $creator;
+    protected $creator;
 
     public function __construct(callable $creator)
     {

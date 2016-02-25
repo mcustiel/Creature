@@ -19,15 +19,14 @@ class LazyCreator implements CreatorInterface
                 'Error creating instance. Class does not exists: ' . $this->className
             );
         }
+        // Yeah, yeah... I'm using eval... Just to support PHP 5.5, with 5.5 we could use ... operator
         return eval("return new \\{$this->className}(" . $this->argumentsArrayToArgumentsString() . ");");
     }
 
     public function argumentsArrayToArgumentsString()
     {
-        $argumentsList = '';
-        foreach (array_keys($this->arguments) as $key) {
-            $argumentsList .= '$this->arguments[\'' . $key . '\'],';
-        }
-        return rtrim($argumentsList, ',');
+        return '$this->arguments[\''
+            . implode('\'],$this->arguments[\'', array_keys($this->arguments))
+            . '\']';
     }
 }
