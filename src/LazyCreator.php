@@ -19,7 +19,7 @@ class LazyCreator implements CreatorInterface
                 'Error creating instance. Class does not exists: ' . $this->className
             );
         }
-        // Yeah, yeah... I'm using eval... Just to support PHP 5.5, with 5.5 we could use ... operator
+        // Yeah, yeah... I'm using eval... Just to support PHP 5.5, with 5.6 we could use ... operator
         return eval("return new \\{$this->className}(" . $this->argumentsArrayToArgumentsString() . ");");
     }
 
