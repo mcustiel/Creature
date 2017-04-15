@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature\Unit;
 
 use Mcustiel\Creature\ObjectDistributor;
@@ -13,6 +14,6 @@ class ObjectDistributorTest extends \PHPUnit_Framework_TestCase
         $creator = new ObjectDistributor('potato');
 
         $value = $creator->getInstance();
-        $this->assertEquals('potato', $value);
+        $this->assertSame('potato', $value);
     }
 }

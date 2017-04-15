@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature;
 
 interface CreatorInterface

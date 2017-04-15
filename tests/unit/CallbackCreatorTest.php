@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature\Unit;
 
 use Mcustiel\Creature\CallbackCreator;
@@ -17,6 +18,6 @@ class CallbackCreatorTest extends \PHPUnit_Framework_TestCase
         $creator = new CallbackCreator($callback);
 
         $value = $creator->getInstance();
-        $this->assertEquals('Some return value', $value);
+        $this->assertSame('Some return value', $value);
     }
 }

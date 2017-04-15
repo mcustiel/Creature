@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature;
 
 trait Singleton
@@ -10,6 +11,7 @@ trait Singleton
         if ($this->instance === null) {
             $this->instance = parent::getInstance();
         }
+
         return $this->instance;
     }
 }

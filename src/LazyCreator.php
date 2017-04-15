@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature;
 
 class LazyCreator implements CreatorInterface
@@ -19,8 +20,8 @@ class LazyCreator implements CreatorInterface
                 'Error creating instance. Class does not exists: ' . $this->className
             );
         }
-        // Yeah, yeah... I'm using eval... Just to support PHP 5.5, with 5.6 we could use ... operator
-        return eval("return new \\{$this->className}(" . $this->argumentsArrayToArgumentsString() . ");");
+
+        return new $this->className(...$this->arguments);
     }
 
     public function argumentsArrayToArgumentsString()

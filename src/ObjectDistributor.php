@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature;
 
 class ObjectDistributor implements CreatorInterface

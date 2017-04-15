@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Creature;
 
 class CallbackCreator implements CreatorInterface
@@ -13,6 +14,7 @@ class CallbackCreator implements CreatorInterface
     public function getInstance()
     {
         $function = $this->creator;
+
         return $function();
     }
 }

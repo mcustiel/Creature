@@ -1,4 +1,5 @@
 <?php
+
 namespace Mcustiel\Tests\Fixtures;
 
 class Dummy

@@ -1,8 +1,9 @@
 <?php
+
 namespace Mcustiel\Creature\Unit;
 
-use Mcustiel\Tests\Fixtures\Dummy;
 use Mcustiel\Creature\SingletonLazyCreator;
+use Mcustiel\Tests\Fixtures\Dummy;
 
 class SingletonLazyCreatorTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,6 +18,6 @@ class SingletonLazyCreatorTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Dummy::class, $value1);
         $value2 = $creator->getInstance();
         $this->assertSame($value1, $value2);
-        $this->assertEquals($value1->getArg1(), $value2->getArg1());
+        $this->assertSame($value1->getArg1(), $value2->getArg1());
     }
 }
