@@ -4,17 +4,17 @@ filter:
 before_commands:
   - 'composer install --prefer-source'
 checks:
-    php: true
+  php: true
 coding_style:
-    php: {  }
+  php: {  }
 build:
   environment:
     php:
       version: 5.6
-    tests:
-        override:
-            -
-                command: 'phpunit -c tests --coverage-clover=clover.xml'
-                coverage:
-                    file: 'clover.xml'
-                    format: 'php-clover'
+  tests:
+    override:
+      -
+        command: './vendor/bin/phpunit -c tests --coverage-clover=clover.xml'
+        coverage:
+          file: 'clover.xml'
+          format: 'clover'
