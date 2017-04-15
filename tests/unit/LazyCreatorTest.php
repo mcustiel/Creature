@@ -33,4 +33,20 @@ class LazyCreatorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('potato', $dummy->getArg1());
         $this->assertNull($dummy->getArg2());
     }
+
+    /**
+     * @test
+     */
+    public function shouldFailIfTheClassDoesNotExist()
+    {
+        $creator = new LazyCreator('IDontExist', ['potato']);
+
+        $this->setExpectedException(
+            \RuntimeException::class,
+            'Error creating instance. Class does not exists: IDontExist'
+        );
+
+        $creator->getInstance();
+
+    }
 }

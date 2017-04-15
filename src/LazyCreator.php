@@ -23,11 +23,4 @@ class LazyCreator implements CreatorInterface
 
         return new $this->className(...$this->arguments);
     }
-
-    public function argumentsArrayToArgumentsString()
-    {
-        return '$this->arguments[\''
-            . implode('\'],$this->arguments[\'', array_keys($this->arguments))
-            . '\']';
-    }
 }
